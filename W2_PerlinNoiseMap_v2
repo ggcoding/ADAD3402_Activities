@@ -1,0 +1,16 @@
+float noiseScale = 0.07; 
+
+void setup() {
+  size(700, 500);
+}
+
+void draw() {
+background(0, map(mouseX, 0, width, 0, 700), map(mouseY, 0, height, 0, 500));
+for (int x = 0; x < width; x++){
+for(int y = 0; y < height; y++){
+float noiseVal = noise(x*noiseScale, y*noiseScale);
+stroke(noiseVal*175, 10, 150);
+point(x, y);
+    } 
+  }
+}
